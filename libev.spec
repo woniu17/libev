@@ -31,14 +31,14 @@ Header files and libraries of %{name}
 
 %build
 ./configure --prefix=/usr/local/%{name}
-make
+make -j2
 
 %install
 rm -rf %{buildroot}
 make DESTDIR=%{buildroot}  install
 
 %clean
-# rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %pre
 
@@ -55,8 +55,6 @@ echo "%{name} is already uninstalled!"
 
 %files
 %defattr(-,root,root)
-/usr/local/%{name}/include/*
-/usr/local/%{name}/lib/*
-/usr/local/%{name}/share/*
+/usr/local/%{name}/*
 
 %changelog
