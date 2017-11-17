@@ -13,10 +13,11 @@ cd ${rpmdir}
                 #--define="_sourcedir ${rpmdir}/source"  \
                 #--define="_specdir ${rpmdir}/spec"    \
 rpmbuild -tb --define="_topdir ${rpmdir}" \
-                --define="_builddir ${rpmdir}/build"   \
+                --define="_builddir ${rpmdir}"   \
                 --define="_buildrootdir ${rpmdir}/buildroot"   \
-                --define="_rpmdir ${rpmdir}/rpm"       \
-                --define="_srcrpmdir ${rpmdir}/srcrpm" \
+                --define="_rpmdir ${rpmdir}"       \
+                --define="_specdir ${rpmdir}"    \
+                --define="_srcrpmdir ${rpmdir}" \
                 --define="name ${name}" \
                 --define="version ${version}" \
                 --define="release ${release}" \
